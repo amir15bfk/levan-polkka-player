@@ -64,6 +64,12 @@ public class MainActivity extends AppCompatActivity {
             mediaPlayer = MediaPlayer.create(this,R.raw.levan_polkka);
         }
         mediaPlayer.start();
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                Toast.makeText(MainActivity.this,"end of the song", LENGTH_LONG).show();
+            }
+        });
     }
     public void pause(View v){
         if (mediaPlayer != null)
